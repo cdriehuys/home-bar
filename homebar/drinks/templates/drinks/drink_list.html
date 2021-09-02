@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Drinks</title>
+    </head>
+    <body>
+        <h1>Drinks!</h1>
+        <ul>
+            {% for drink in object_list %}
+            <ul>{{ drink.name }}</ul>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
