@@ -7,6 +7,9 @@ class Drink(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=50, primary_key=True)
 
+    class Meta:
+        ordering = ("name",)
+
     def __str__(self) -> str:
         return self.name
 
@@ -42,6 +45,9 @@ class DrinkRecipe(models.Model):
 class Ingredient(models.Model):
     name = models.CharField(max_length=100, primary_key=True)
     in_stock = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ("name",)
 
     def __str__(self) -> str:
         return self.name
