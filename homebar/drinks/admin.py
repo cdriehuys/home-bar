@@ -9,3 +9,10 @@ class DrinkAdmin(admin.ModelAdmin):
     list_display = ("name",)
     readonly_fields = ("slug",)
     search_fields = ("name",)
+
+
+@register(models.Ingredient)
+class IngredientAdmin(admin.ModelAdmin):
+    fields = ("name", "in_stock")
+    list_display = ("name", "in_stock")
+    search_fields = ("name",)

@@ -14,3 +14,11 @@ class Drink(models.Model):
             self.slug = slugify(self.name)[:50]
 
         super().save(*args, **kwargs)
+
+
+class Ingredient(models.Model):
+    name = models.CharField(max_length=100, primary_key=True)
+    in_stock = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return self.name
