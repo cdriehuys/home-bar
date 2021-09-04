@@ -3,14 +3,20 @@
 {% block title %}Drinks{% endblock %}
 
 {% block content %}
-    <h1>Drinks!</h1>
-    <ul>
-        {% for drink in object_list %}
-        <ul>
-            <a href="{% url 'drink-detail' drink.slug %}">
-                {{ drink.name }}
-            </a>
+    <main class="flow-container">
+        <h1 class="page-title">Drinks!</h1>
+        <ul class="drink-list">
+            {% for drink in object_list %}
+            <li class="drink-list__item">
+                <a class="drink-list__link" href="{% url 'drink-detail' drink.slug %}">
+                    {{ drink.name }}
+                </a>
+
+                {% if drink.description %}
+                <p class="drink-list__description">{{ drink.description }}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
         </ul>
-        {% endfor %}
-    </ul>
+    </main>
 {% endblock %}

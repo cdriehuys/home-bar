@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: rgb(32, 214, 154);
+    --font-family-headings: 'Dancing Script', cursive;
+    --font-family-body: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-family-body);
+}
+
+.drink-list {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    list-style: none;
+}
+
+.drink-list__item::not(:last-child) {
+    display: grid;
+    gap: .5em;
+    grid-template-columns: 1fr;
+}
+
+.drink-list__description {
+    color: #333;
+}
+
+.drink-list__link,
+.drink-list__link:visited {
+    color: var(--color-primary);
+    display: block;
+    font-size: 1.15em;
+    text-decoration: underline;
+}
+
+.flow-container {
+    margin: 0 auto;
+    max-width: 52em;
+    padding: 0 1em;
+}
+
+.page-title {
+    color: var(--color-primary);
+    font-family: var(--font-family-headings);
+    font-size: 3rem;
+    margin-bottom: .5em;
+}
+
+@media screen and (min-width: 480px) {
+    .page-title {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .page-title {
+        font-size: 5rem;
+    }
+}

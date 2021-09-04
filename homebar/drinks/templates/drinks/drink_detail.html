@@ -3,9 +3,11 @@
 {% block title %}{{ object.name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ object.name }}</h1>
+    <main class="flow-container">
+        <h1 class="page-title">{{ object.name }}</h1>
 
-    {% if object.description %}
-        <p>{{ object.description }}</p>
-    {% endif %}
+        {% if object.description %}
+            <p>{{ object.description }}</p>
+        {% endif %}
+    </main>
 {% endblock %}
