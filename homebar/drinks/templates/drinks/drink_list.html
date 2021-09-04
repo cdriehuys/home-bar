@@ -1,14 +1,16 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Drinks</title>
-    </head>
-    <body>
-        <h1>Drinks!</h1>
+{% extends 'base.html' %}
+
+{% block title %}Drinks{% endblock %}
+
+{% block content %}
+    <h1>Drinks!</h1>
+    <ul>
+        {% for drink in object_list %}
         <ul>
-            {% for drink in object_list %}
-            <ul>{{ drink.name }}</ul>
-            {% endfor %}
+            <a href="{% url 'drink-detail' drink.slug %}">
+                {{ drink.name }}
+            </a>
         </ul>
-    </body>
-</html>
+        {% endfor %}
+    </ul>
+{% endblock %}

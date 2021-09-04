@@ -2,10 +2,15 @@ from django.db.models.expressions import F
 from django.db.models.query import QuerySet
 from django.db.models.query_utils import Q
 from django.shortcuts import render
+from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.db.models import Count
 
 from drinks import models
+
+
+class DrinkDetailView(DetailView):
+    model = models.Drink
 
 
 class DrinksListView(ListView):
